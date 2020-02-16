@@ -37,7 +37,7 @@ class HistoriableModelServiceProvider extends ServiceProvider
             if (!class_exists("History")){
                 // Publishing the models.
                 $this->publishes([
-                    __DIR__.'/../src/Models/History.php' => resource_path('app/Models/History'),
+                    __DIR__.'/../src/Models/History.php' => app_path('app/Models/History'),
                 ], 'models');
             }
 
