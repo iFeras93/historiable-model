@@ -2,6 +2,7 @@
 
 namespace Iferas93\HistoriableModel;
 
+use Iferas93\Models\History;
 use Illuminate\Support\ServiceProvider;
 
 class HistoriableModelServiceProvider extends ServiceProvider
@@ -21,7 +22,7 @@ class HistoriableModelServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('historiable-model.php'),
+                __DIR__.'/../config/historiable.php' => config_path('historiable.php'),
             ], 'config');
 
             // Publishing the views.
@@ -50,11 +51,11 @@ class HistoriableModelServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'historiable-model');
+        $this->mergeConfigFrom(__DIR__.'/../config/historiable.php', 'historiable-model');
 
         // Register the main class to use with the facade
         $this->app->singleton('historiable-model', function () {
-            return new HistoriableModel;
+            return new History();
         });
     }
 }

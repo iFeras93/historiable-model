@@ -20,4 +20,9 @@ trait Histroiable
     {
 
     }
+
+    public function history()
+    {
+        return $this->morphMany(config('historiable.model'),"Historiable");
+    }
 }

@@ -5,5 +5,5 @@
  */
 return [
     "enable" => true, //true/false enable historiable
-    'model' => __DIR__ . '/../src/Models/HistoriableModel', // history model path app/Models/History.php
+    'model' => \Iferas93\Models\History::class, // history model class
 ];
