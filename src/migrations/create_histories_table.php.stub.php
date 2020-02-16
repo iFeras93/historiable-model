@@ -9,7 +9,7 @@
  * @date        2/16/2020
  */
 
-namespace Iferas93\HistoriableModel\migrations;
+//namespace Iferas93\HistoriableModel\migrations;
 
 
 use Illuminate\Database\Migrations\Migration;

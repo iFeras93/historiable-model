@@ -59,7 +59,7 @@ class HistoriableModelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../src/migrations');
+        //$this->loadMigrationsFrom(__DIR__ . '/../src/migrations');
 
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__ . '/../config/historiable.php', 'historiable-model');
