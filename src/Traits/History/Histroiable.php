@@ -21,7 +21,7 @@ trait Histroiable
     public static function bootHistroiable()
     {
         static::updated(function (Model $model) {
-            $columns = $this->getChangedColumns($model);
+            $columns = $model->getChangedColumns($model);
             collect($columns)->each(function ($column) use ($model) {
                 $model->saveChanges($column);
             });
