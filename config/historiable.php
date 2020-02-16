@@ -5,5 +5,5 @@
  */
 return [
     "enable" => true, //true/false enable historiable
-    'model' => \Iferas93\Models\History::class, // history model class
+    'model' => \Iferas93\HistoriableModel\Models\History::class, // history model class
 ];
