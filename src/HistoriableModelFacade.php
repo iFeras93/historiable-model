@@ -16,6 +16,6 @@ class HistoriableModelFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'historiable-model';
+        return 'historiable';
     }
 }

@@ -12,14 +12,6 @@ class HistoriableModelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*
-         * Optional methods to load your package assets
-         */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'historiable-model');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'historiable-model');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/historiable.php' => config_path('historiable.php'),
@@ -34,32 +26,14 @@ class HistoriableModelServiceProvider extends ServiceProvider
             }
 
 
-            if (!class_exists("History")) {
+           /* if (!class_exists("History")) {
                 // Publishing the models.
                 $this->publishes([
-                    __DIR__ . '/../src/Models/History.php' => app_path('Models/History'),
+                    __DIR__ . '/../src/Models/History.php' => app_path('Models/History.php'),
                 ], 'models');
-            }
-
-
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/historiable-model'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/historiable-model'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/historiable-model'),
-            ], 'lang');*/
-
-            // Registering package commands.
-            // $this->commands([]);
+            }*/
         }
+
     }
 
     /**
@@ -67,13 +41,11 @@ class HistoriableModelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //$this->loadMigrationsFrom(__DIR__ . '/../src/migrations');
-
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/historiable.php', 'historiable-model');
+        $this->mergeConfigFrom(__DIR__ . '/../config/historiable.php', 'historiable');
 
         // Register the main class to use with the facade
-        $this->app->singleton('historiable-model', function () {
+        $this->app->singleton('historiable', function () {
             return new History();
         });
     }
