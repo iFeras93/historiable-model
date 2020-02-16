@@ -18,7 +18,7 @@ use Illuminate\Support\Collection;
 
 trait Histroiable
 {
-    public function bootHistroiable()
+    public static function bootHistroiable()
     {
         static::updated(function (Model $model) {
             $columns = $this->getChangedColumns($model);
