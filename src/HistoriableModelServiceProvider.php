@@ -28,7 +28,7 @@ class HistoriableModelServiceProvider extends ServiceProvider
             if (!class_exists("CreateHistoriesTable")) {
                 $this->publishes([
                     __DIR__ . '/../src/migrations/create_histories_table.php.stub.php'
-                    => database_path('migrations' . date("Y_m_d_His", time()) . "_create_histories_table.php")
+                    => database_path('migrations/' . date("Y_m_d_His", time()) . "_create_histories_table.php")
                 ], 'migrations');
 
             }
