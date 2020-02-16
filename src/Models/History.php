@@ -1,6 +1,6 @@
 <?php
 
-namespace Iferas93\Models;
+namespace Iferas93\HistoriableModel\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
