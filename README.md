@@ -1,7 +1,7 @@
 # Historiable Model
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/iferas93/historiable-model.svg?style=flat-square)](https://packagist.org/packages/iferas93/historiable-model)
-[![Build Status](https://img.shields.io/travis/iferas93/historiable-model/master.svg?style=flat-square)](https://travis-ci.org/iferas93/historiable-model)
+[![Build Status](https://github.styleci.io/repos/240874198/shield)]()
 [![Quality Score](https://img.shields.io/scrutinizer/g/iferas93/historiable-model.svg?style=flat-square)](https://scrutinizer-ci.com/g/iferas93/historiable-model)
 [![Total Downloads](https://img.shields.io/packagist/dt/iferas93/historiable-model.svg?style=flat-square)](https://packagist.org/packages/iferas93/historiable-model)
 
