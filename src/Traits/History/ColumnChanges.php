@@ -11,7 +11,6 @@
 
 namespace Iferas93\HistoriableModel\Traits\History;
 
-
 class ColumnChanges
 {
     public $column;

@@ -11,10 +11,8 @@
 
 namespace Iferas93\HistoriableModel\Traits\History;
 
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
 
 trait Histroiable
 {
@@ -31,6 +29,7 @@ trait Histroiable
     private function getChangedColumns(Model $model)
     {
         $original = $model->getOriginal();
+
         return collect(Arr::except($model->getChanges(), $this->ignoredColumns()))->map(function ($change, $column) use ($original) {
             return new ColumnChanges($column, Arr::get($original, $column), $change);
         });
@@ -39,21 +38,21 @@ trait Histroiable
     protected function ignoredColumns()
     {
         return [
-            'updated_at'
+            'updated_at',
         ];
     }
 
     private function saveChanges(ColumnChanges $column)
     {
         $this->history()->create([
-            "changed_column" => $column->column,
-            "value_from" => $column->from,
-            "value_to" => $column->to,
+            'changed_column' => $column->column,
+            'value_from' => $column->from,
+            'value_to' => $column->to,
         ]);
     }
 
     public function history()
     {
-        return $this->morphMany(config('historiable.model'), "Historiable");
+        return $this->morphMany(config('historiable.model'), 'Historiable');
     }
 }

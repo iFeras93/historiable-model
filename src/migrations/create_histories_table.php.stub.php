@@ -11,7 +11,6 @@
 
 //namespace Iferas93\HistoriableModel\migrations;
 
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -27,10 +26,10 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->morphs("historiable");
+            $table->morphs('historiable');
             $table->string('changed_column');
-            $table->text("value_from")->nullable();
-            $table->text("value_to")->nullable();
+            $table->text('value_from')->nullable();
+            $table->text('value_to')->nullable();
             $table->timestamps();
         });
     }
