@@ -16,9 +16,34 @@ composer require iferas93/historiable-model
 ```
 
 ## Usage
+This package create "histories" table.
+Publish the migration ,model and the configuration file using
+``` 
+php artisan vendor:publish --provider="Iferas93\HistoriableModel\HistoriableModelServiceProvider"
+```
 
-``` php
-// coming soon
+And run the migrations:
+```
+php artisan migrate
+```
+
+After that you can add the trait `Histroiable`  on any  model like:
+```
+use Iferas93\HistoriableModel\Traits\History\Histroiable;
+
+class Artical extends Model
+{
+    use Historiable;
+
+    //this function for igonred cloumns from historiable
+    protected function ignoredColumns()
+        {
+            return [
+                'updated_at',
+                'slug'
+            ];
+        }
+}
 ```
 
 ### Testing
