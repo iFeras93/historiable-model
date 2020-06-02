@@ -1,8 +1,6 @@
 <?php
 
 namespace Iferas93\HistoriableModel;
-
-use Iferas93\Models\History;
 use Illuminate\Support\ServiceProvider;
 
 class HistoriableModelServiceProvider extends ServiceProvider
