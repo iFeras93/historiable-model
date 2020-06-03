@@ -3,6 +3,7 @@
 namespace Iferas93\HistoriableModel\Http\Controllers;
 
 
+use Iferas93\HistoriableModel\Models\History;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
@@ -10,19 +11,23 @@ class HistoryController extends Controller
 
     /**
      * Show History of changes column
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-
+        $changelog = History::query()->paginate();
+        return view('historiable::index', compact(['changelog']));
     }
 
     /**
      * Show specific item by ID
-     *
-     * @param $id
+     * @param History $history
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(History $history)
     {
-
+        $changelogById = History::query()->where('id', $history->id)->first();
+        return view('historiable::index', compact(['changelogById']));
     }
 }
