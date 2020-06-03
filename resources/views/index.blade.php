@@ -19,6 +19,7 @@
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             To Value
                         </th>
+                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -27,15 +28,19 @@
                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
                                 {{ $change->historiable_type }}
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                                {{ $change->changed_column }}
+                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                {{ ucfirst($change->changed_column) }}
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
                                 {{ $change->value_from }}
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
                                 {{ $change->value_to }}
                             </td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                <i class="far fa-eye cursor-pointer" onclick="goToDetails({{ $change->id }})"></i>
+                            </td>
+
                         </tr>
                     @empty
                         no data
@@ -47,4 +52,19 @@
             </div>
         </div>
     </div>
+
+
+@endsection
+@section('js')
+    <script>
+
+        $(document).ready(function () {
+            console.log("ready!");
+        });
+
+        function goToDetails(id) {
+            console.log('id=>' + id)
+            window.location.href = "{{ url('/changelog') }}" + '/' + id;
+        }
+    </script>
 @endsection

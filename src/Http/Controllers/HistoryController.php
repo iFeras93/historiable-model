@@ -25,9 +25,10 @@ class HistoryController extends Controller
      * @param History $history
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(History $history)
+    public function show($id)
     {
-        $changelogById = History::query()->where('id', $history->id)->first();
-        return view('historiable::index', compact(['changelogById']));
+        //return $id;
+        $changelogById = History::query()->where('id', $id)->first();
+        return view('historiable::show', compact(['changelogById']));
     }
 }
