@@ -16,7 +16,7 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $changelog = History::query()->paginate();
+        $changelog = History::query()->orderByDesc('id')->paginate();
         return view('historiable::index', compact(['changelog']));
     }
 
