@@ -21,7 +21,6 @@ class InstallPackage extends Command
      */
     protected $description = 'publish package assets';
 
-
     /**
      * Execute the console command.
      *
@@ -33,13 +32,13 @@ class InstallPackage extends Command
         $this->info('Publishing configuration...');
         $this->call('vendor:publish', [
             '--provider' => "Iferas93\HistoriableModel\HistoriableModelServiceProvider",
-            '--tag' => "config"
+            '--tag' => 'config',
         ]);
 
         $this->info('Publishing migrations...');
         $this->call('vendor:publish', [
             '--provider' => "Iferas93\HistoriableModel\HistoriableModelServiceProvider",
-            '--tag' => "migrations"
+            '--tag' => 'migrations',
         ]);
 
         $this->info('Historiable has been Installed successfully');
