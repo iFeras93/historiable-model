@@ -2,7 +2,6 @@
 
 namespace Iferas93\HistoriableModel\Console\Commands;
 
-
 use Illuminate\Console\Command;
 
 class InstallPackage extends Command
