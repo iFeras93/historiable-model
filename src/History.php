@@ -1,12 +1,9 @@
 <?php
 
-
 namespace Iferas93\HistoriableModel;
-
 
 class History
 {
-
     /**
      * History constructor.
      */
@@ -14,16 +11,15 @@ class History
     {
     }
 
-
     /**
-     * Get History Data With Pagination
+     * Get History Data With Pagination.
      */
     public function getHistory()
     {
     }
 
     /**
-     * Get History By ID
+     * Get History By ID.
      *
      * @param $id
      */
