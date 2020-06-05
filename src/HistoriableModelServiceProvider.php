@@ -2,6 +2,7 @@
 
 namespace Iferas93\HistoriableModel;
 
+use App\Console\Commands\InstallPackage;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -23,16 +24,20 @@ class HistoriableModelServiceProvider extends ServiceProvider
                 ], 'migrations');
             }
 
-            /* if (!class_exists("History")) {
+             /*if (!class_exists("History")) {
                  // Publishing the models.
                  $this->publishes([
                      __DIR__ . '/../src/Models/History.php' => app_path('Models/History.php'),
                  ], 'models');
              }*/
+
+            $this->commands([
+                InstallPackage::class,
+            ]);
         }
 
-        $this->loadRoutesFrom(__DIR__.'../../routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'historiable');
+        $this->loadRoutesFrom(__DIR__ . '../../routes/web.php');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'historiable');
         Paginator::useTailwind();
     }
 
@@ -42,7 +47,7 @@ class HistoriableModelServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/historiable.php', 'historiable');
+        $this->mergeConfigFrom(__DIR__ . '/../config/historiable.php', 'historiable');
 
         // Register the main class to use with the facade
         $this->app->bind('historiable', function () {
