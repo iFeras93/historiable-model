@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Iferas93\HistoriableModel\Console\Commands;
+
 
 use Illuminate\Console\Command;
 

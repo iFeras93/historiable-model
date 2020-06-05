@@ -17,15 +17,11 @@ composer require iferas93/historiable-model
 
 ## Usage
 This package create "histories" table.
-Publish the migration ,model and the configuration file using
+Publish the migration and the configuration file using
 ``` 
-php artisan vendor:publish --provider="Iferas93\HistoriableModel\HistoriableModelServiceProvider"
+php artisan historiable:install
 ```
 
-And run the migrations:
-```
-php artisan migrate
-```
 
 After that you can add the trait `Histroiable`  on any  model like:
 ```
@@ -33,6 +29,7 @@ use Iferas93\HistoriableModel\Traits\History\Histroiable;
 
 class Artical extends Model
 {
+    //this line for appling historiable to model
     use Historiable;
 
     //this function for igonred cloumns from historiable
