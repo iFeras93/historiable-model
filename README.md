@@ -7,6 +7,11 @@
 
 Easy way to make and show your model history
  
+ ![History List](screenshot/historable_image_1.PNG)
+ 
+ ![History Details](screenshot/historable_image_2.PNG)
+
+
 ## Installation
 
 You can install the package via composer:
@@ -29,7 +34,7 @@ use Iferas93\HistoriableModel\Traits\History\Histroiable;
 
 class Artical extends Model
 {
-    //this line for appling historiable to model
+    //this line for applying historiable to Article Model
     use Historiable;
 
     //this function for igonred cloumns from historiable
@@ -41,6 +46,11 @@ class Artical extends Model
             ];
         }
 }
+```
+
+You can access Histories(Changelog) Table from:
+``` 
+http://domain.exmaple/changelog
 ```
 
 ### Testing
