@@ -2,10 +2,9 @@
 
 namespace Iferas93\HistoriableModel;
 
-
-use Illuminate\Support\ServiceProvider;
 use Iferas93\HistoriableModel\Console\Commands\InstallPackage;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\ServiceProvider;
 
 class HistoriableModelServiceProvider extends ServiceProvider
 {
